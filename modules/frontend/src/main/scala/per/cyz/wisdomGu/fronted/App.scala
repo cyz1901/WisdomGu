@@ -22,6 +22,12 @@ import per.cyz.wisdomGu.fronted.pages.HomePage
 @JSImport("styles/index.css", JSImport.Default)
 object IndexCss extends js.Object
 
+@js.native
+@JSImport("tw-elements", JSImport.Default)
+private object TW extends js.Object {
+  def initTE(): js.Any = js.native
+}
+
 object App extends IOWebApp {
   val indexCss: IndexCss.type = IndexCss
 

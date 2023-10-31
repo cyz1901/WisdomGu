@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "popmotion": "^11.0.5",
+    "slate": "^0.100.0",
     "tw-elements": "^1.0.0"
   }
 }
