@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@layer base {
+    html {
+      font-family: "Roboto", system-ui, sans-serif;
+    }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
