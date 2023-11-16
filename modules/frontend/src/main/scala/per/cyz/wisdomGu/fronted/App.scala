@@ -17,41 +17,38 @@ import org.scalajs.dom.*
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import per.cyz.wisdomGu.fronted.pages.HomePage
+import per.cyz.wisdomGu.fronted.stores.GlobalStore
 
 @js.native
 @JSImport("styles/index.css", JSImport.Default)
 object IndexCss extends js.Object
 
 @js.native
-@JSImport("tw-elements", JSImport.Default)
-private object TW extends js.Object {
-  def initTE(): js.Any = js.native
-}
+@JSImport("@iconify-json/uil", JSImport.Namespace)
+object UilIcons extends js.Object
 
 object App extends IOWebApp {
   val indexCss: IndexCss.type = IndexCss
 
   def render: Resource[IO, fs2.dom.HtmlElement[IO]] = {
-    routes(
-      pathEnd {
-        runEffect {
-          IO {
-            import typings.twElements.*
-
-          } >> BrowserNavigation.pushState(url = "/home")
-        }
-      },
-      pathPrefix("home") {
-        firstMatch(
-          pathEnd {
-            HomePage.root()
+    SignallingRef.of[IO, GlobalStore](GlobalStore.apply()).toResource.flatMap { globalStore =>
+      routes(
+        pathEnd {
+          runEffect {
+            BrowserNavigation.pushState(url = "/home")
           }
-        )
-      },
-      noneMatched {
-        div("404")
-      }
-    )
-
+        },
+        pathPrefix("home") {
+          firstMatch(
+            pathEnd {
+              HomePage.root(globalStore)
+            }
+          )
+        },
+        noneMatched {
+          div("404")
+        }
+      )
+    }
   }
 }

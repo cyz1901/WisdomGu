@@ -7,15 +7,14 @@ import org.http4s.dsl.Http4sDsl
 
 object Routes {}
 
-//   def userRoutes[F[_]: Sync](J: Jokes[F]): HttpRoutes[F] =
-//     val dsl = new Http4sDsl[F] {}
-//     import dsl._
-//     HttpRoutes.of[F] { case GET -> Root / "joke" =>
-//       for {
-//         joke <- J.get
-//         resp <- Ok(joke)
-//       } yield resp
-//     }
+def testRoutes[F[_]: Sync](): HttpRoutes[F] =
+  val dsl = new Http4sDsl[F] {}
+  import dsl._
+  HttpRoutes.of[F] { case GET -> Root / "test" =>
+    for {
+      resp <- Ok("hello world")
+    } yield resp
+  }
 
 //   def jokeRoutes[F[_]: Sync](J: Jokes[F]): HttpRoutes[F] =
 //     val dsl = new Http4sDsl[F] {}

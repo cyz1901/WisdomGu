@@ -17,7 +17,7 @@ export default ({ mode }) => {
         styles: resolve(__dirname, "./modules/frontend/styles"),
         svg: resolve(__dirname, "./modules/frontend/static/svg"),
         imgs: resolve(__dirname, "./modules/frontend/static/imgs"),
-        js: resolve(__dirname, "./modules/frontend/js"),
+        webapp: resolve(__dirname, "./modules/frontend/src/main/webapp"),
         mxml: resolve(__dirname, "./modules/frontend/static/mxml"),
       },
     },

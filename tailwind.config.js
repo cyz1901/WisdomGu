@@ -1,4 +1,5 @@
 const scalaVersion = require("./scala-version");
+const { addDynamicIconSelectors } = require("@iconify/tailwind");
 
 module.exports = (api) => {
   const scalajsMode = api.env === "production" ? "opt" : "fastopt";
@@ -6,9 +7,12 @@ module.exports = (api) => {
     content: [
       `./modules/frontend/target/scala-${scalaVersion}/frontend-${scalajsMode}/*.js`,
       "./index.html",
-      "./node_modules/tw-elements/dist/js/**/*.js",
     ],
-    plugins: [require("tw-elements/dist/plugin.cjs")],
+    plugins: [
+      require("@tailwindcss/typography"),
+      addDynamicIconSelectors(),
+      require("daisyui"),
+    ],
     theme: {
       extend: {
         fontFamily: {
@@ -18,3 +22,15 @@ module.exports = (api) => {
     },
   };
 };
+
+// /** @type {import('tailwindcss').Config} */
+// module.exports = {
+//   theme: {
+//     // ...
+//   },
+//   content: ["./index.html"],
+//   plugins: [
+//     require("@tailwindcss/typography"),
+//     // ...
+//   ],
+// };
