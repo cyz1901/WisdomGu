@@ -1,5 +1,3 @@
-FROM postgres:16
+FROM surrealdb/surrealdb:latest
 
-ENV POSTGRES_PASSWORD=docker
-
-CMD ["postgres"]
+EXPOSE 8000 8000

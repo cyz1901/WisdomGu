@@ -52,6 +52,8 @@ lazy val frontend =
       .settings(
         libraryDependencies ++= Seq.concat(
           Dependencies.catsEffect.value,
-          Dependencies.http4sBe.value
+          Dependencies.http4sBe.value,
+          Dependencies.surrealdb.value,
+          Dependencies.langchain4j.value
         )
       )

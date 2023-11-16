@@ -37,4 +37,16 @@ object Dependencies {
       "org.http4s" %% "http4s-circe" % DependencyVersions.http4s
     )
   }
+
+  val surrealdb: Def.Initialize[Seq[ModuleID]] = Def.setting {
+    Seq(
+      "com.surrealdb" % "surrealdb-driver" % DependencyVersions.surrealdb
+    )
+  }
+
+  val langchain4j: Def.Initialize[Seq[ModuleID]] = Def.setting {
+    Seq(
+      "dev.langchain4j" % "langchain4j" % DependencyVersions.langchain4j
+    )
+  }
 }
