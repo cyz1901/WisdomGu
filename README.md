@@ -28,39 +28,49 @@ Wisdom Gu represents the next evolution in knowledge management, combining the p
 
 ## Getting Started
 
-Follow these steps to get started with Wisdom Gu:
+### Prerequisites
+
+Before setting up Wisdom Gu, ensure you have the following components installed:
+
+- **Node.js**: Wisdom Gu frontend relies on [Node.js](https://nodejs.org/en) for package management and building. Ensure you have Node.js installed on your machine.
+
+- **Scala Enviorment**: The frontend utilizes [Scala.js](https://www.scala-js.org/) to compile [Scala](https://www.scala-lang.org/) code into JavaScript and interacts with the backend written in Scala.Ensure your Scala development environment is set up properly.
+
+Then you can get started with Wisdom Gu:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/wisdom-gu.git
+   git clone git@github.com:cyz1901/WisdomGu.git
    ```
 
-2. **Install Dependencies**:
+### Frontend Setup
+
+Follow these steps to get started with Wisdom Gu frontend:
+
+1. **Install Dependencies**:
    ```bash
-   cd wisdom-gu
-   npm install
+   pnpm install
    ```
 
-3. **Run the Application**:
+2. **Start SBT, transform TypeScript into Scala dependencies and enable compilation monitoring**:
    ```bash
-   npm start
+   sbt ~frontend/fastLinkJS
    ```
 
-   This will launch Wisdom Gu on your local machine, allowing you to explore its features.
-
-## Contributing
-
-We welcome contributions from the community. If you want to contribute to Wisdom Gu, please follow our [contribution guidelines](CONTRIBUTING.md).
+3. **Open another terminal and start Vite**
+   ```
+   pnpm run dev
+   ```
 
 ## Feedback and Support
 
-If you encounter any issues or have suggestions for improvement, please open an issue on the [GitHub repository](https://github.com/your-username/wisdom-gu/issues).
+If you encounter any issues or have suggestions for improvement, please open an issue on the [GitHub repository](https://github.com/cyz1901/WisdomGu/issues).
 
-For general support and discussions, join our [community forum](https://forum.wisdom-gu.com).
+For general support and discussions, join our [community](https://github.com/cyz1901/WisdomGu/discussions).
 
 ## License
 
-Wisdom Gu is released under the [MIT License](LICENSE).
+Wisdom Gu is released under the [APGL License](LICENSE).
 
 ---
 
