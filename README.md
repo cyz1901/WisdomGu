@@ -1,3 +1,14 @@
+<h1 align="center">
+  <br>
+  <img height="300" src="https://github.com/cyz1901/WisdomGu/blob/main/public/welcome.png?raw=true"> <br>
+    Wisdom Gu
+<br>
+</h1>
+
+[![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.13.0.svg)](https://www.scala-js.org)
+![Calico](https://img.shields.io/badge/calico-0.2.1-blue)
+![Tauri](https://img.shields.io/badge/Tauri-2.0.0-blue?logo=tauri)
+
 # Wisdom Gu - Next Generation Knowledge Base
 
 Wisdom Gu is a cutting-edge knowledge base built with Scala.js and Tauri.

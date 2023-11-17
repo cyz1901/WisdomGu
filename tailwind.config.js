@@ -20,17 +20,9 @@ module.exports = (api) => {
         },
       },
     },
+    daisyui: {
+      themes: ["dark"],
+      darkTheme: "dark",
+    },
   };
 };
-
-// /** @type {import('tailwindcss').Config} */
-// module.exports = {
-//   theme: {
-//     // ...
-//   },
-//   content: ["./index.html"],
-//   plugins: [
-//     require("@tailwindcss/typography"),
-//     // ...
-//   ],
-// };
