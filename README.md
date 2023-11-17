@@ -7,6 +7,7 @@
 
 [![Scala.js](https://www.scala-js.org/assets/badges/scalajs-1.13.0.svg)](https://www.scala-js.org)
 ![Calico](https://img.shields.io/badge/calico-0.2.1-blue)
+![CatsEffect](https://img.shields.io/badge/cats-effect-3.5.2-blue)
 ![Tauri](https://img.shields.io/badge/Tauri-2.0.0-blue?logo=tauri)
 
 # Wisdom Gu - Next Generation Knowledge Base
