@@ -39,7 +39,7 @@ object DataPage {
   def renderPage(): Resource[IO, HtmlElement[IO]] = div(
     cls := "flex flex-row w-full h-full",
     div(
-      cls := "w-full h-full bg-[#2A2C35]",
+      cls := "flex flex-col w-full h-full bg-[#2A2C35]",
       div(
         cls := "w-full h-8 bg-[#1B1D22] flex flex-row items-center justify-between",
         div(
@@ -48,9 +48,10 @@ object DataPage {
             cls := "btn btn-xs bg-[#272a31] rounded-none"
           )
         )
-      )
-    )
-    // div(cls := "w-[256px] bg-gray-200")
+      ),
+      rendereditor()
+    ),
+    div(cls := "w-[256px] bg-[#1B1D22]")
   )
 
 }

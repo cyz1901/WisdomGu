@@ -8,11 +8,10 @@ import org.http4s.ember.server.EmberServerBuilder
 import org.http4s.implicits._
 import org.http4s.server.middleware.Logger
 
-object TestServer {
+object InittServer {
 
   def run[F[_]: Async]: F[Nothing] = {
     for {
-      client <- EmberClientBuilder.default[F].build
       //   helloWorldAlg = HelloWorld.impl[F]
       //   jokeAlg = Jokes.impl[F](client)
 

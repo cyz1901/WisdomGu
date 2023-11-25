@@ -48,12 +48,12 @@ lazy val frontend =
       .in(
         file("modules/backend")
       )
-      .disablePlugins(RevolverPlugin)
       .settings(
         libraryDependencies ++= Seq.concat(
           Dependencies.catsEffect.value,
           Dependencies.http4sBe.value,
           Dependencies.surrealdb.value,
           Dependencies.langchain4j.value
-        )
+        ),
+        reStart / mainClass := Some("per.cyz.wisdomGu.backend.Main")
       )

@@ -62,6 +62,15 @@ Follow these steps to get started with Wisdom Gu frontend:
    pnpm run dev
    ```
 
+### Backend Setup
+
+Follow these steps to get started with Wisdom Gu backend:
+
+1. **Start SBT, Within sbt start the back-end app**:
+   ```bash
+   sbt ~backend/reStart
+   ```
+
 ## Feedback and Support
 
 If you encounter any issues or have suggestions for improvement, please open an issue on the [GitHub repository](https://github.com/cyz1901/WisdomGu/issues).
