@@ -8,33 +8,25 @@ import org.http4s.ember.server.EmberServerBuilder
 import org.http4s.implicits._
 import org.http4s.server.middleware.Logger
 import cats.effect.IO
+import cats.effect.kernel.Resource
+import per.cyz.wisdomGu.backend.servers.LocalAIService
+import per.cyz.musicalMaster.backend.Routes
 
 object Server {
+  def run[F[_]: Async] = {
+    val LocalAIAlg = LocalAIService.impl[F]
 
-  def run(): IO[Nothing] = {
-    // helloWorldAlg = HelloWorld.impl[F]
-    //   jokeAlg = Jokes.impl[F](client)
+    val httpApp = (
+      Routes.localAIRoutes[F](LocalAIAlg)
+    ).orNotFound
 
-    // Combine Service Routes into an HttpApp.
-    // Can also be done via a Router if you
-    // want to extract a segments not checked
-    // in the underlying routes.
-    // httpApp = (
-    //   Routes.helloWorldRoutes[F](helloWorldAlg)
-    // ).orNotFound
+    val finalHttpApp = Logger.httpApp(true, true)(httpApp)
 
-    // // With Middlewares in place
-    // finalHttpApp = Logger.httpApp(true, true)(httpApp)
-    println("hello world")
-
-    for {
-      _ <-
-        EmberServerBuilder
-          .default[IO]
-          .withHost(ipv4"0.0.0.0")
-          .withPort(port"8080")
-          // .withHttpApp(finalHttpApp)
-          .build
-    } yield ()
-  }.useForever
+    EmberServerBuilder
+      .default[F]
+      .withHost(ipv4"0.0.0.0")
+      .withPort(port"6666")
+      .withHttpApp(finalHttpApp)
+      .build
+  }
 }
